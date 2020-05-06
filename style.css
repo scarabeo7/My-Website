@@ -43,9 +43,9 @@
   /* Create two unequal columns that sits next to each other */
   /* Sidebar/left column */
   .side {
-    flex: 20%;
+    flex: 25%;
     background-color: #f1f1f1;
-    padding: 50px;
+    padding: 40px;
   }
   /* Main column */
   .main {   
@@ -56,13 +56,13 @@
   /* Fake image, just for this example */
   .fakeimg {
     background-color: #aaa;
-    width: 155px;
-    height: 181px;
+    width: 285px;
+    height: 355px;
     padding: 0px;
   }
   /* Footer */
   .footer {
-    padding: 20px;
+    padding: 0px;
     text-align: center;
     background: #ddd;
   }
