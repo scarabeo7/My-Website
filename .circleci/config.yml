@@ -14,7 +14,9 @@ jobs:
       - run: 
           name: Uploading file to AWS S3
           command: |
-           aws s3 cp index.html s3://chizim.co.uk/index.html          
+           aws s3 cp index.html s3://chizim.co.uk/index.html
+           aws s3 cp style.css s3://chizim.co.uk/style.css
+           aws s3 cp thumbnail.jpeg s3://chizim.co.uk/thumbnail.jpeg          
   upload_s3_file1:
     executor: aws-cli/default
     steps:
@@ -27,6 +29,8 @@ jobs:
           name: Uploading file to AWS S3
           command: |
            aws s3 cp index.html s3://chizim.club/index.html
+           aws s3 cp style.css s3://chizim.co.uk/style.css
+           aws s3 cp thumbnail.jpeg s3://chizim.co.uk/thumbnail.jpeg
 workflows:
   aws-cli:
     jobs:
