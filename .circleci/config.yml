@@ -1,0 +1,56 @@
+version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@1.0.0
+
+commands:
+  aws-setup:
+    description: Configures aws profile for Circleci user
+    steps:
+      - aws-cli/setup:
+          profile-name: Personal Website
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_DEFAULT_REGION
+
+  upload_s3_file_1:
+    description: Runs script to upload files to S3 bucket (chizim.co.uk)
+    steps:
+      - run:
+          name: Uploading file to AWS S3 bucket (chizim.co.uk)
+          command: |
+            aws s3 cp index.html s3://chizim.co.uk/index.html
+            aws s3 cp style.css s3://chizim.co.uk/style.css
+            aws s3 cp thumbnail.jpeg s3://chizim.co.uk/thumbnail.jpeg
+
+  upload_s3_file_2:
+    description: Runs script to upload files to S3 bucket (chizim.club)
+    steps:
+      - run:
+          name: Uploading file to AWS S3 bucket (chizim.club)
+          command: |
+            aws s3 cp index.html s3://chizim.club/index.html
+            aws s3 cp style.css s3://chizim.club/style.css
+            aws s3 cp thumbnail.jpeg s3://chizim.club/thumbnail.jpeg
+
+
+jobs:
+  upload-1:
+    executor: aws-cli/default
+    steps:
+      - checkout
+      - aws-cli/setup
+      - upload_s3_file_1
+              
+  upload-2:
+    executor: aws-cli/default
+    steps:
+      - checkout
+      - aws-cli/setup
+      - upload_s3_file_2
+
+workflows:
+  aws-cli:
+    jobs:
+      - upload-1
+      - upload-2
+           
