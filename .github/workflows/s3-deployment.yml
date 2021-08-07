@@ -29,4 +29,3 @@ jobs:
         uses: jonelantha/gatsby-s3-action@v1
         with:
           dest-s3-bucket: chizim.co.uk
-          cloudfront-id-to-invalidate: E4Y2V4O0RIC6
