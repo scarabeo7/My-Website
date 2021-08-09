@@ -84,6 +84,11 @@ svg {
     height: 100%;
 }
 
+/* Remove underline on nav-link*/
+  a {
+    text-decoration: none;
+  }
+
 .image{
     border-radius: 45%;
     width: 150px;
