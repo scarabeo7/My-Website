@@ -68,7 +68,7 @@ const projects = () => {
             <li>
               Created a React app that integrates with a REST Countries API to
               fetch Country data and display information about each of the
-              CountriesSee source code
+              Countries. See source code
               <a
                 href="https://github.com/scarabeo7/countries-react"
                 target="_blank"
