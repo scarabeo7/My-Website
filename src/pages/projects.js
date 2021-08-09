@@ -14,13 +14,21 @@ const projects = () => {
             <li>
               Built a REST API backend with AWS S3 and NodeJS Express following
               good engineering and security best practices for a charity
-              website.
+              website. See source code
               <a
                 href="https://github.com/scarabeo7/dev-ninjas-uchi"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Click here.
+                &nbsp;here
+              </a>
+              &nbsp;and website
+              <a
+                href="https://dev-ninjas-uchi.herokuapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &nbsp;here
               </a>
             </li>
             <li>
@@ -28,31 +36,63 @@ const projects = () => {
               infrastructure components that provide security and services to
               servers by writing scripts using CloudFormation (AWS tool for IAC)
               and set up CI/CD pipeline using Git/GitHub, CircleCI for
-              automation process.
+              automation process. See source code
               <a
                 href="https://github.com/scarabeo7/Udagram-project"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Click here.
+                &nbsp;here
               </a>
             </li>
             <li>
-              <a>
-                A wep app project using pure HTML, CSS and Javascript, that
-                shows details of all episodes of a TV show. The data is fetched
-                from a REST API 'TV MAZE'.
-              </a>
-            </li>
-            <li>-</li>
-            <li>
-              My personal website repo -
+              A wep app project using pure HTML, CSS and Javascript, that shows
+              details of all episodes of a TV show. The data is fetched from a
+              REST API 'TV MAZE'. See source code
               <a
-                href="https://github.com/scarabeo7/New-Website"
+                href="https://github.com/scarabeo7/tv-show-dom-project"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                click here
+                &nbsp;here
+              </a>
+              &nbsp;and website
+              <a
+                href="https://cyf-scarabeo7-tv.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &nbsp;here
+              </a>
+            </li>
+            <li>
+              Created a React app that integrates with a REST Countries API to
+              fetch Country data and display information about each of the
+              CountriesSee source code
+              <a
+                href="https://github.com/scarabeo7/countries-react"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &nbsp;here
+              </a>
+              &nbsp;and website
+              <a
+                href="https://cyf-scarabeo7-countries-react.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &nbsp;here
+              </a>
+            </li>
+            <li>
+              My personal website repo -
+              <a
+                href="https://github.com/scarabeo7/My-Website"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &nbsp;click here
               </a>
             </li>
           </ul>

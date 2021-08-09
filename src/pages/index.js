@@ -27,6 +27,7 @@ const index = () => {
           <i class="devicon-git-plain-wordmark colored" />
           <i class="devicon-github-original-wordmark colored" />
           <i class="devicon-nodejs-plain-wordmark colored" />
+          <i class="devicon-linux-plain colored"></i>
           <i class="devicon-amazonwebservices-plain-wordmark colored" />
           <i class="devicon-postgresql-plain colored" />
           <i class="devicon-react-original-wordmark colored" />
