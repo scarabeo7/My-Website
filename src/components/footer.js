@@ -49,7 +49,7 @@ const footer = () => {
         }}
       />
       <a
-        href="mailto:garrohat@yahoo.co.uk"
+        href="mailto:chizim.chinuru@yahoo.co.uk"
         class="fa fa-envelope"
         aria-hidden="true"
         style={{
