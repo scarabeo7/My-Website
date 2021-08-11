@@ -8,7 +8,7 @@ const projects = () => {
     <div>
       <Header />
       <Layout>
-        <h2 style={{ color: `rgb(98, 0, 255)` }}>Projects</h2>
+        <h2 style={{ color: `rgb(98, 0, 255)`, marginTop:`5rem` }}>Projects</h2>
         <p id={css.projects}>
           <ul>
             <li>

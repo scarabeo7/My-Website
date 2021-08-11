@@ -14,7 +14,7 @@ const contact = () => {
         />
         <p style={{ alignSelf: `center` }}>
           <a
-            href="mailto:garrohat@yahoo.co.uk"
+            href="mailto:chizim.chinuru@yahoo.co.uk"
             target="_blank"
             rel="noopener noreferrer"
             class="fa fa-envelope"
@@ -28,7 +28,7 @@ const contact = () => {
               textDecoration: "none",
             }}
           >
-            garrohat@yahoo.co.uk
+            &nbsp;chizim.chinuru@yahoo.co.uk
           </a>
         </p>
       </Layout>
