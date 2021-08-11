@@ -13,7 +13,6 @@ const ListLink = (props) => (
 const layout = ({ children }) => {
   return (
     <div className={css.container}>
-      <div className={css.menubar}>
         <header>
           <ul className={css.menuList}>
             <ListLink to="/">HOME</ListLink>
@@ -22,7 +21,6 @@ const layout = ({ children }) => {
             <ListLink to="/contact/">CONTACT</ListLink>
           </ul>
         </header>
-      </div>
       <div className={css.introLine}>{children}</div>
       <Footer />
     </div>
