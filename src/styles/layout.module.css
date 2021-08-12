@@ -167,6 +167,11 @@ footer {
   .skillsContainer {
     font-size: 30px;
   }
+
+
+  footer{
+      margin-top: 2.7rem;
+  }
 }
 
 @media screen and (min-width: 375px) {
@@ -189,6 +194,10 @@ footer {
 
   .skillsContainer {
     font-size: 25px;
+  }
+
+  footer{
+      margin-top: 5rem;
   }
 }
 
