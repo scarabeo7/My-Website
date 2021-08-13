@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import Header from "../components/header";
 import * as css from "../styles/layout.module.css";
-import profile from "../images/image.jpeg";
+import profile from "../images/thumbnail.jpeg";
 
 //import Avatar from 'avataaars'
 /* eslint-disable */
