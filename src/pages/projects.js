@@ -8,7 +8,9 @@ const projects = () => {
     <div>
       <Header />
       <Layout>
-        <h2 style={{ color: `rgb(98, 0, 255)`, marginTop:`5rem` }}>Projects</h2>
+        <h2 style={{ color: `rgb(98, 0, 255)`, marginTop: `5rem` }}>
+          Projects
+        </h2>
         <p id={css.projects}>
           <ul>
             <li>
@@ -24,7 +26,7 @@ const projects = () => {
               </a>
               &nbsp;and website
               <a
-                href="https://dev-ninjas-uchi.herokuapp.com/"
+                href="https://uchi.world/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
