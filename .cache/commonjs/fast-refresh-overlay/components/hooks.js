@@ -1,6 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
+exports.useFileCodeFrame = useFileCodeFrame;
 exports.useStackFrame = useStackFrame;
 
 var React = _interopRequireWildcard(require("react"));
@@ -23,9 +24,25 @@ const initialResponse = {
 function useStackFrame({
   moduleId,
   lineNumber,
-  columnNumber
+  columnNumber,
+  skipSourceMap,
+  endLineNumber,
+  endColumnNumber
 }) {
-  const url = `/__original-stack-frame?moduleId=` + window.encodeURIComponent(moduleId) + `&lineNumber=` + window.encodeURIComponent(lineNumber) + `&columnNumber=` + window.encodeURIComponent(columnNumber);
+  let url = `/__original-stack-frame?moduleId=` + window.encodeURIComponent(moduleId) + `&lineNumber=` + window.encodeURIComponent(lineNumber) + `&columnNumber=` + window.encodeURIComponent(columnNumber);
+
+  if (skipSourceMap) {
+    url += `&skipSourceMap=true`;
+  }
+
+  if (endLineNumber) {
+    url += `&endLineNumber=` + window.encodeURIComponent(endLineNumber);
+
+    if (endColumnNumber) {
+      url += `&endColumnNumber=` + window.encodeURIComponent(endColumnNumber);
+    }
+  }
+
   const [response, setResponse] = React.useState(initialResponse);
   React.useEffect(() => {
     async function fetchData() {
@@ -44,6 +61,36 @@ function useStackFrame({
         });
       } catch (err) {
         setResponse({ ...initialResponse,
+          decoded: (0, _utils.prettifyStack)(err.message)
+        });
+      }
+    }
+
+    fetchData();
+  }, []);
+  return response;
+}
+
+function useFileCodeFrame({
+  filePath,
+  lineNumber,
+  columnNumber
+}) {
+  const url = `/__file-code-frame?filePath=` + window.encodeURIComponent(filePath) + `&lineNumber=` + window.encodeURIComponent(lineNumber) + `&columnNumber=` + window.encodeURIComponent(columnNumber);
+  const [response, setResponse] = React.useState({
+    decoded: null
+  });
+  React.useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url);
+        const json = await res.json();
+        const decoded = (0, _utils.prettifyStack)(json.codeFrame);
+        setResponse({
+          decoded
+        });
+      } catch (err) {
+        setResponse({
           decoded: (0, _utils.prettifyStack)(err.message)
         });
       }

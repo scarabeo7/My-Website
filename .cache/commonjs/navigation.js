@@ -3,9 +3,9 @@
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 exports.__esModule = true;
+exports.RouteUpdates = void 0;
 exports.init = init;
 exports.shouldUpdateScroll = shouldUpdateScroll;
-exports.RouteUpdates = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
@@ -27,8 +27,6 @@ var _routeAnnouncerProps = require("./route-announcer-props");
 
 var _reachRouter = require("@gatsbyjs/reach-router");
 
-var _history = require("@gatsbyjs/reach-router/lib/history");
-
 var _gatsbyLink = require("gatsby-link");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -49,10 +47,21 @@ function maybeRedirect(pathname) {
   } else {
     return false;
   }
-}
+} // Catch unhandled chunk loading errors and force a restart of the app.
+
+
+let nextRoute = ``;
+window.addEventListener(`unhandledrejection`, event => {
+  if (/loading chunk \d* failed./i.test(event.reason)) {
+    if (nextRoute) {
+      window.location.pathname = nextRoute;
+    }
+  }
+});
 
 const onPreRouteUpdate = (location, prevLocation) => {
   if (!maybeRedirect(location.pathname)) {
+    nextRoute = location.pathname;
     (0, _apiRunnerBrowser.apiRunner)(`onPreRouteUpdate`, {
       location,
       prevLocation
@@ -67,7 +76,7 @@ const onRouteUpdate = (location, prevLocation) => {
       prevLocation
     });
 
-    if (process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
+    if (process.env.GATSBY_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
       _emitter.default.emit(`onRouteUpdate`, {
         location,
         prevLocation
@@ -81,7 +90,7 @@ const navigate = (to, options = {}) => {
   // navigate(-2) (jumps back 2 history steps)
   // navigate(2)  (jumps forward 2 history steps)
   if (typeof to === `number`) {
-    _history.globalHistory.navigate(to);
+    _reachRouter.globalHistory.navigate(to);
 
     return;
   }
@@ -117,7 +126,7 @@ const navigate = (to, options = {}) => {
     });
   }, 1000);
 
-  _loader.default.loadPage(pathname).then(pageResources => {
+  _loader.default.loadPage(pathname + search).then(pageResources => {
     // If no page resources, then refresh the page
     // Do this, rather than simply `window.location.reload()`, so that
     // pressing the back/forward buttons work - otherwise when pressing
@@ -142,7 +151,7 @@ const navigate = (to, options = {}) => {
           });
         }
 
-        window.location = pathname;
+        window.location = pathname + search + hash;
       }
     }
 
@@ -196,7 +205,7 @@ function shouldUpdateScroll(prevRouterProps, {
 function init() {
   // The "scroll-behavior" package expects the "action" to be on the location
   // object so let's copy it over.
-  _history.globalHistory.listen(args => {
+  _reachRouter.globalHistory.listen(args => {
     args.location.action = args.action;
   });
 
@@ -208,10 +217,7 @@ function init() {
     replace: true
   });
 
-  window.___navigate = (to, options) => navigate(to, options); // Check for initial page-load redirect
-
-
-  maybeRedirect(window.location.pathname);
+  window.___navigate = (to, options) => navigate(to, options);
 }
 
 class RouteAnnouncer extends _react.default.Component {

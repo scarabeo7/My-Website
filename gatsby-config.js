@@ -1,17 +1,10 @@
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
 module.exports = {
   siteMetadata: {
-    siteUrl: "http://chizim.co.uk/",
-    title: "Chizim - Cloud DevOps Engineer",
+    title: `website`,
+    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [
-    "gatsby-plugin-mdx",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
-  ],
-};
+  plugins: [],
+}
