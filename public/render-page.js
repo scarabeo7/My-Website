@@ -244,7 +244,7 @@ var plugins = [{
     "remarkPlugins": [],
     "rehypePlugins": [],
     "mediaTypes": ["text/markdown", "text/x-markdown"],
-    "root": "/home/chizim/Documents/My-Website"
+    "root": "/Users/chizimchinuru/Documents/Personal/My-Website"
   }
 }];
 /* global plugins */
@@ -5272,24 +5272,24 @@ if (false) {} else {
 /***/ }),
 
 /***/ "react-dom/server":
-/*!*************************************************************************************!*\
-  !*** external "/home/chizim/Documents/My-Website/node_modules/react-dom/server.js" ***!
-  \*************************************************************************************/
+/*!******************************************************************************************************!*\
+  !*** external "/Users/chizimchinuru/Documents/Personal/My-Website/node_modules/react-dom/server.js" ***!
+  \******************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/home/chizim/Documents/My-Website/node_modules/react-dom/server.js");
+module.exports = require("/Users/chizimchinuru/Documents/Personal/My-Website/node_modules/react-dom/server.js");
 
 /***/ }),
 
 /***/ "react":
-/*!********************************************************************************!*\
-  !*** external "/home/chizim/Documents/My-Website/node_modules/react/index.js" ***!
-  \********************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** external "/Users/chizimchinuru/Documents/Personal/My-Website/node_modules/react/index.js" ***!
+  \*************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/home/chizim/Documents/My-Website/node_modules/react/index.js");
+module.exports = require("/Users/chizimchinuru/Documents/Personal/My-Website/node_modules/react/index.js");
 
 /***/ }),
 
