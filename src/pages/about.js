@@ -21,7 +21,7 @@ const about = () => {
           programming language, HTML, CSS, JavaScript, Node Package Manager
           (NPM), Linux OS, bash/shell scripting on daily basis.
           <br />
-          <br />I live in Birmingham with my beautiful wife and two daughters,
+          <br />I live in Birmingham with my beautiful wife, two daughters and a son,
           and life wouldn't be the same without them.
         </p>
       </Layout>
